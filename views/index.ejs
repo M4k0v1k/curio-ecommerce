@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KenyaCurio - Your One-stop Shop</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      /* Custom Styles */
+      body {
+        background-color: #f4f4f4;
+        font-family: 'Arial', sans-serif;
+      }
+      header {
+        background-color: #232f3e;
+        color: white;
+        padding: 10px 0;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .navbar-brand {
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+      .navbar-nav {
+        margin-left: auto;
+      }
+      .navbar-nav .nav-link {
+        color: white;
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #cfd8dc;
+      }
+      .hero {
+        background: url('/img/hero-bg.jpg') no-repeat center center/cover;
+        color: white;
+        text-align: center;
+        padding: 100px 0;
+      }
+      .hero h2 {
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .hero p {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+      }
+      .btn-hero {
+        background-color: #f0c14b;
+        border-color: #a88734 #9c7e31 #846a29;
+        color: #111;
+        padding: 12px 40px;
+        font-size: 1.4rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+      }
+      .btn-hero:hover {
+        background-color: #e1ac00;
+        border-color: #9c7e31 #846a29 #745d25;
+        color: #111;
+      }
+      .product-section {
+        padding: 4rem 0;
+        background-color: white;
+      }
+      .product-card {
+        background-color: #f8f9fa;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+      }
+      .product-card:hover {
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+      }
+      .product-card img {
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      .product-card h5 {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .product-card p {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 15px;
+      }
+      .product-card .btn {
+        background-color: #f0c14b;
+        border-color: #a88734 #9c7e31 #846a29;
+        color: #111;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 8px 20px;
+        transition: all 0.3s ease;
+      }
+      .product-card .btn:hover {
+        background-color: #e1ac00;
+        border-color: #9c7e31 #846a29 #745d25;
+        color: #111;
+      }
+      footer {
+        background-color: #232f3e;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href="#">KenyaCurio</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link btn btn-outline-light mr-2" href="/register"
+                  >Register</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-warning" href="/login">Login</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-left">
+              <h2>Welcome to KenyaCurio</h2>
+              <p class="lead">Your one-stop shop for unique handmade goods.</p>
+              <a href="#" class="btn btn-hero">Explore Now</a>
+            </div>
+            <div class="col-md-6">
+              <!-- Optional: You can add an image or any other content here -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-section">
+        <div class="container">
+          <h2 class="text-center mb-4">Featured Products</h2>
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="product-card">
+                <img src="/img/product1.jpg" alt="Product Image" />
+                <h5>Product Name</h5>
+                <p>
+                  Description of the product. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit.
+                </p>
+                <p>$XX.XX</p>
+                <a href="#" class="btn btn-sm btn-primary">View Product</a>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="product-card">
+                <img src="/img/product2.jpg" alt="Product Image" />
+                <h5>Product Name</h5>
+                <p>
+                  Description of the product. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit.
+                </p>
+                <p>$XX.XX</p>
+                <a href="#" class="btn btn-sm btn-primary">View Product</a>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="product-card">
+                <img src="/img/product3.jpg" alt="Product Image" />
+                <h5>Product Name</h5>
+                <p>
+                  Description of the product. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit.
+                </p>
+                <p>$XX.XX</p>
+                <a href="#" class="btn btn-sm btn-primary">View Product</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 KenyaCurio. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies (optional if needed) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
