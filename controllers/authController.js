@@ -6,18 +6,24 @@ require('dotenv').config()
 
 const authController = {
   register: async (req, res) => {
-    const { username, email, password, type } = req.body
-    const hashedPassword = await bcrypt.hash(password, 10)
+    const { username, email, password, fname, lname, dob } = req.body
+    try {
+      const hashedPassword = await bcrypt.hash(password, 10)
 
-    User.createUser(
-      { username, email, password: hashedPassword, type },
-      (err, result) => {
-        if (err) {
-          return res.status(500).send('Server error')
+      User.createUser(
+        { username, password: hashedPassword, dob, email, fname, lname },
+        (err, result) => {
+          if (err) {
+            console.error('Database error:', err)
+            return res.status(500).send('Server error')
+          }
+          res.redirect('/login')
         }
-        res.redirect('/login')
-      }
-    )
+      )
+    } catch (error) {
+      console.error('Registration error:', error)
+      res.status(500).send('Server error')
+    }
   },
   login: (req, res) => {
     const { email, password } = req.body

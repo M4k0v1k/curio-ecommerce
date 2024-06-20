@@ -3,10 +3,17 @@ const db = require('../config/db')
 const User = {
   createUser: (user, callback) => {
     const sql =
-      'INSERT INTO users (username, email, password, type) VALUES (?, ?, ?, ?)'
+      'INSERT INTO users (username, password, dob, email, fname, lname) VALUES (?, ?, ?, ?, ?, ?)'
     db.query(
       sql,
-      [user.username, user.email, user.password, user.type],
+      [
+        user.username,
+        user.password,
+        user.dob,
+        user.email,
+        user.fname,
+        user.lname,
+      ],
       callback
     )
   },

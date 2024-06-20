@@ -188,42 +188,21 @@
         <div class="container">
           <h2 class="text-center mb-4">Featured Products</h2>
           <div class="row">
+            <% products.slice(0, 12).forEach(product => { %>
             <div class="col-md-4 mb-4">
               <div class="product-card">
-                <img src="/img/product1.jpg" alt="Product Image" />
-                <h5>Product Name</h5>
-                <p>
-                  Description of the product. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit.
-                </p>
-                <p>$XX.XX</p>
+                <img src="<%= product.image %>" alt="Product Image" />
+                <h5><%= product.name %></h5>
+                <p><%= product.description %></p>
+                <p>$<%= product.price %></p>
+                <% if (product.quantity > 0) { %>
                 <a href="#" class="btn btn-sm btn-primary">View Product</a>
+                <% } else { %>
+                <p class="text-danger">Not in stock</p>
+                <% } %>
               </div>
             </div>
-            <div class="col-md-4 mb-4">
-              <div class="product-card">
-                <img src="/img/product2.jpg" alt="Product Image" />
-                <h5>Product Name</h5>
-                <p>
-                  Description of the product. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit.
-                </p>
-                <p>$XX.XX</p>
-                <a href="#" class="btn btn-sm btn-primary">View Product</a>
-              </div>
-            </div>
-            <div class="col-md-4 mb-4">
-              <div class="product-card">
-                <img src="/img/product3.jpg" alt="Product Image" />
-                <h5>Product Name</h5>
-                <p>
-                  Description of the product. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit.
-                </p>
-                <p>$XX.XX</p>
-                <a href="#" class="btn btn-sm btn-primary">View Product</a>
-              </div>
-            </div>
+            <% }) %>
           </div>
         </div>
       </section>

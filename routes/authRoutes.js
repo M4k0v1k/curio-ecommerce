@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const authController = require('../controllers/authController')
+const ensureAuth = require('../middleware/ensureAuth') // Importing the authentication middleware
 
 // Register routes
 router.get('/register', (req, res) => {
@@ -17,5 +18,10 @@ router.get('/login', (req, res) => {
 })
 
 router.post('/login', authController.login)
+
+// Dashboard route
+router.get('/dashboard', ensureAuth, (req, res) => {
+  res.render('dashboard', { user: req.user })
+})
 
 module.exports = router

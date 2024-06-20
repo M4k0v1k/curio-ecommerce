@@ -25,12 +25,9 @@ app.use(
 
 // Routes setup
 const authRoutes = require('./routes/authRoutes')
+const indexRoutes = require('./routes/indexRoutes') // Import the new routes
 app.use(authRoutes)
-
-// Root route
-app.get('/', (req, res) => {
-  res.render('index')
-})
+app.use(indexRoutes) // Use the new routes
 
 // Start the server
 const PORT = process.env.PORT || 3000
